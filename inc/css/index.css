@@ -1,0 +1,667 @@
+
+
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+.body{
+    font-family: 'Lato';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.2;
+    background-image: url("img/paper-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: grid;
+}
+input::placeholder{
+    font-style: oblique;
+    opacity: .7;
+    color: rgb(24, 25, 26);
+    color:rgba(10, 144, 173, 0.281);
+}
+input,button{
+    font-size: smaller;
+    background-color: rgba(60, 75, 65, .5);
+    border:0;
+    outline: 1px solid rgba(10, 144, 173, 0.281);
+}
+input:hover,input:focus,input:active,button:hover,button:focus,button:active{
+    outline: 2px double rgb(17, 190, 233);
+    opacity: 1;
+}
+input:focus::placeholder {
+    color: transparent;
+}
+.stdbutton{
+    color: rgb(17, 190, 233);
+    font-size: medium;
+    border: 2px solid rgb(40, 79, 95);
+    box-shadow: 1px rgb(40, 79, 95);
+}
+/*****************************************************HEADER*********************************************/ 
+                                                
+                                                /*index.php*/
+    .header{
+        width: 100%;
+        display: grid;
+    }
+        .header__topbar{
+            min-height: 10vh;
+            background-color:#1c2a2e;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;  
+            width: 100%;
+        }
+        
+        @media(min-width:700px){
+            .header__topbar{
+                justify-content: space-between;  
+            }
+        }
+            #header_registreer{
+                color: rgb(109, 196, 28);
+            }
+            #header_registreer:hover,#header_registreer:focus,#header_registreer:active{
+                outline: 2px double rgb(109, 196, 28);
+            }
+            .header__topbar__end{
+                display:flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            @media(min-width:547px){
+                .header__topbar__end{
+                    padding-top: 0px
+                }
+            } 
+                .errorlogin::placeholder{
+                    color: white;
+                    opacity: 1;
+                    font-size: smaller;
+                }
+                .header__topbar input,.header__topbar button{
+                    font-size: smaller;
+                    min-height: 30px;
+                    align-self: center;
+                    color: rgb(17, 190, 233);
+                    margin-right: 0.2rem;
+                }
+                .header__topbar input:hover,.header__topbar input:focus,.header__topbar input:active,.header__topbar button:hover,.header__topbar button:focus,.header__topbar button:active{
+                    outline: 2px double rgb(17, 190, 233);
+                    opacity: 1;
+                }
+                .header__topbar input{
+                    min-width: 200px;
+                    margin: .3ch;
+                }
+                .header__topbar input::placeholder{
+                    color: rgb(17, 190, 233);
+                }
+                .header__topbar button{        
+                    min-width: 120px;
+                    max-width: 100px;
+                    margin: 16px;
+                }  
+                                                /*userpage.php*/
+        .header__topbar__userpage{
+            min-height: 50px;
+            min-height: 10vh;
+            background-color:#1c2a2e;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            justify-content: center;  
+            width: 100%;
+        }  
+        .header__topbar__userpage>*{
+            margin: 0 16px;
+        }  
+        #searchbar{
+            border-radius: 2ch;
+            border: 2px solid #142c2a;
+            height: 50px;
+            background-color: ghostwhite;
+            outline: 0;
+            opacity: 1;
+            padding: 1ch;
+        }
+        #searchbar::placeholder{
+            padding: 1ch;
+        }
+        #searchbtn{
+            padding: 0;  
+            outline: 0;
+        }
+        #searchbtn:hover{
+            outline: 2px double #bebebe;
+        }
+        #zoom{
+            height: 40px;
+        }
+        @media(min-width:700px){
+            .header__topbar__userpage{
+                justify-content: space-between;  
+            }
+            .main-userpage{
+                grid-template-columns: repeat(auto-fit,35%);
+                grid-column-gap: 16px;
+                justify-content: space-evenly;
+            }   
+                .wrapper-myfriends{
+                    order: 3;
+                }
+                .wrapper-mypost{
+                    order: 2;
+                }
+                .wrapper-berichten{
+                    order: 1;
+                }
+        }                         
+        
+        .user_avatar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+            .user_avatar a{
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .user_avatar>*{
+                margin:2px 10px;
+            }
+            .user_avatar>*:hover{
+                opacity: .5;
+            }
+            .user_avatar>*:last-child{
+                margin-right:0 
+            }
+                #bell{
+                    cursor: pointer;
+                    height: 32px;
+                    width: 32px;
+                    
+                }           
+            #hamburger{
+                color: white;
+                cursor: pointer;
+                
+            }
+            .icon_profile{
+                cursor: pointer;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+            }
+            
+        .usermenu,.notifmenu{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-content: flex-end;
+            align-items: flex-end;
+            right: 16px;
+            padding: 1ch 0;
+            border-top:2.5px solid #1de9b6;
+            /*background: url(img/paper-bg.jpg) no-repeat center;*/
+            background-color: transparent;
+            opacity: 1;
+        }
+        .notif-container,.menu-container{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            padding: 1ch;
+            background-color: ghostwhite;
+        }
+        .menu-container>*{
+            margin: 2px 0;
+        }
+        .usermenu button{
+            padding: 1ch;
+            background-color: #ffffff;
+            outline: 0;
+            margin: 1px;
+            width: 120px;
+            min-width: 15vw;
+            min-height: 30px;
+
+            font-weight: 600;
+        }
+        .usermenu button:hover,.usermenu button:focus,.usermenu button:active{
+            text-decoration: underline;
+            outline: 1px solid rgba(10, 144, 173, 0.281);
+        }
+        #header_afmelden{
+            color: rgb(17, 190, 233);
+        }
+        .undisplayed{
+            display: none;
+        }
+        .unshown{
+            visibility: hidden;
+        }
+        .notifmenu{
+            width: 95%;
+            flex-wrap: wrap;
+            margin-left: 1ch;
+        }
+        
+            .notif-title{
+                text-align: center;
+            }
+            .notif-aanvraag{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 1ch;
+                border-radius: 4%;
+            }
+            .notif-aanvraag>*{
+                margin-right: 4px;
+            }
+        
+/*****************************************************MAIN**********************************************/        
+                                                /*index.php*/
+    .main,.main-userpage,.main-editprofile{
+        min-height: 85vh;
+        display: grid;
+    }
+    .footer{
+        min-height: 5vh;
+        background-color:#1c2a2e;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+        .footer p{
+            color: #223236;
+            color: rgba(234, 251, 255, 0.581);
+            font-size: smaller;
+            
+        }
+                                                /*registratie.php*/
+    .main__formwrapper{
+        align-self: center;
+        display: grid;
+        grid-template-columns: 40%;
+        justify-content: space-around;
+    }
+        .main__signupform{
+            justify-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main__signupform label{
+            color: red;
+            text-align: center;
+        }
+            .main__signupform input,.main__signupform button,.main__signupform label{
+                padding: 0;
+                margin: 1ch;
+                min-height: 3rem;
+                width: 200px;
+            }
+            #main_registreer{
+                background: rgb(109, 196, 28);
+                font-size: larger;
+                font-weight: 900;
+                color:  rgb(0, 0, 0);
+                text-shadow: 2px 0 2px #223236;
+            }
+            .main__signupform input::placeholder{
+                color: rgb(0, 0, 0);
+                opacity: 0.3;
+                font-size: smaller;
+            }
+            .main__signupform input{
+                background: #ffffff;
+                padding: 1ch;
+                font-weight: 600;
+                opacity: 1;
+            }
+            input:hover,input:focus,input:active{
+                outline: 1px solid rgb(0, 0, 0);
+                opacity: 1;
+            }
+            button:hover,button:focus,button:active{
+                outline: 3px solid rgb(0, 0, 0);
+            }
+                                            /*editprofile.php*/  
+            
+            #upavlabel,#upproflabel{
+                text-align: center;
+                cursor: pointer;
+                color: whitesmoke;
+                font-weight: 600;
+                background-color: rgba(60, 75, 65, .5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }    
+            #upavlabel :hover,#upavlabel:focus,#upproflabel:hover,#upproflabel:focus{
+                border: 2px solid white;
+            }
+            
+            #upav,#profilepicup{  
+                opacity: 0;
+                z-index: -1;
+                position: absolute;
+            }    
+            #upavtext {
+                color: white;
+            }              
+            .main_opslaan{
+                background-color: rgb(17, 190, 233);
+                font-size: large;
+                font-weight: 600;
+                color: white;
+            }
+            
+            .main_opslaan:hover,.main_opslaan:focus{
+                outline: 2px solid white;
+                opacity: .9;
+            }
+            .wijzigknop{
+                color: whitesmoke;
+                font-weight: 600;
+            }
+            .wijzigknop:hover,.wijzigknop:focus{
+                opacity: .7;
+                outline: 2px solid white;
+            }
+                                                                /*userpage*/
+    .wrapper-mypost{
+        margin: 3rem 0;
+        max-width: 450px;
+        width: 100%;
+        justify-self: center;
+        
+    }
+        .mypost-container{
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 4px;
+            background-color: rgba(184, 184, 184, 0.192);
+        }
+        .mypost-container >*{
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            outline: 1px solid rgba(10, 144, 173, 0.281);
+        }
+        .uploadpanel-between{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            outline: 0;
+        }
+        .uploadpanel{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: 0;
+        }
+        .mypost-container textarea{
+            font-size: large;
+            font-weight: bold;
+            outline: 0;
+            height: 120px;
+            opacity: 1;
+            height: 50px;
+        }
+        #mypost::placeholder{
+            font-size: larger;
+            font-weight: lighter;
+            color: rgba(6, 43, 40, 0.281);
+            font-style: oblique;
+        }
+        
+        #labelupimage{
+            cursor: pointer;
+            padding: .5ch;
+            background-color: #142c2a;
+            border-radius: 2px;
+            color: white;
+        }
+        #labelupimage:hover{
+            outline: 0;
+            opacity: .5;
+        }
+        #upimage{
+            
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        } 
+        #bevestig{
+            outline: 0;
+            align-self: center;
+            width: 60%;
+            cursor: pointer;
+            padding: .5ch;
+            background-color: rgb(17, 190, 233);
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+        }      
+        #bevestig:hover{
+            outline: 0;
+            opacity: .5;
+        }
+.wrapper-berichten{
+    margin: 3rem 0;
+    max-width: 450px;
+    width: 100%;
+    justify-self: center;
+    background-color: rgba(184, 184, 184, 0.192);
+}
+    .wrapper-title{
+        color: ivory;
+        text-shadow: 3px 4px rgba(94, 94, 71, 0.473);
+        background-color: #142c2a;
+        padding: 2%;
+        font-size: larger;
+        font-weight: 600;
+    }
+.gepost-container{
+    padding: 10%;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+    .bericht-container{
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.76);
+        border-radius: 5px;
+        padding: 1rem;
+    }
+    .auteur{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 2px solid #142c2a;
+        padding: 1ch;
+    }
+    .iconwrap{
+        display: flex;
+        align-items: center;
+    }
+        .iconwrap>*{
+            margin-right: 1ch;
+        }
+        #gepostop{
+            font-style: oblique;
+        }
+    .bericht-gepost{
+        padding: 1ch;
+    }
+    .foto-container{
+        display: grid;
+        background-color: rgba(255, 255, 255, 0.76);
+        padding: 5%;
+    }
+    .fotouser{
+        width: 100%;
+        height: auto;
+    }
+.wrapper-myfriends{
+    display: grid;
+    align-content: center;
+    margin: 3rem 0;
+    max-width: 450px;
+    width: 100%;
+    justify-self: center;
+    background-color: rgba(184, 184, 184, 0.192);
+}
+    .friends-container{
+        padding: 5%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,30%);
+        justify-content: space-around;
+    }
+        .friend-item{
+            display: grid;
+            padding: 1.5ch;
+            justify-items: center;
+            align-items: center;
+            grid-template-rows: 64px 32px;
+            grid-row-gap: 1ch;
+            border-radius: 50%;
+            background: transparent;
+        }
+            .friend-av{
+                cursor: pointer;
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+            }
+            .fr-name{
+                display: grid;
+                justify-content: center;
+            }
+            .fr-name a{
+                text-align: center;
+                text-decoration: none;
+            }
+    /*usersearch*/
+    .wrapper-usersearch{
+        margin: 3rem 0;
+        max-width: 850px;
+        height: 350px;
+        width: 100%;
+        justify-self: center;
+    }
+        .banner{
+            height: 100%;
+            display: grid;
+            grid-template-rows: 80% 20%;
+        }
+            .cover{
+                background-image: url(img/coverR.png);
+                display: grid;
+                position: relative;
+            }
+                #avcircle{
+                    width: 168px;
+                    height: 168px;
+                    cursor: pointer;
+                    align-self: end;
+                    position: absolute;
+                    z-index: 1; 
+                    bottom: -20px;
+                    left: 20px;
+                }
+                .usernamec{
+                    align-self: end;
+                    position: absolute;
+                    left: 200px;
+                    bottom: 1ch;
+                }
+                    .user{
+                        font-weight: bolder;
+                        font-size: larger;
+                        color: ghostwhite;
+                    }
+            .underbar{
+                width: 100%;
+                display: grid;
+                grid-auto-flow: column;
+                align-items: center;
+                justify-content: space-between;
+                background-color:ghostwhite;
+            }   
+                .underbar_items{
+                    position: relative;
+                    left: 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                    .underbar_item{
+                        padding: 1ch;
+                    }
+                    .underbar_link,.underbar_form button{
+                        text-decoration: none;
+                        font-weight: bold;
+                        color: #0b4780;
+                    }
+                    .underbar_link:hover,.underbar_link:focus{
+                        text-decoration: underline;
+                        opacity: .7;
+                    }   
+                .underbar_forms{
+                    margin-right: 20px;
+                    position: relative;
+                }
+                    .underbar_forms button{
+                        display: inline-block;
+                        background-color: ghostwhite;
+                        outline: 1.5px solid #0b4780;
+                    }
+                    #verzonden{
+                        background-color: rgba(122, 122, 122, 0.829);
+                        color: rgb(197, 197, 197);
+                        outline: 0;
+                        font-weight: 500;
+                        cursor: pointer;
+                        position: relative;
+                        text-align: center;
+                        padding: .5ch 0;
+                    }
+                    #ontvriend{
+                        padding: .5ch;
+                        background-color: ghostwhite;
+                        font-weight: 500;
+                        height: 100%;
+                    }
+                        #do_unfriend{
+                            display: inline-block;
+                            background-color: ghostwhite;
+                            border: 1.5px solid #0b4780;
+                            font-weight: bold;
+                            color: #0b4780;
+                            padding: 0 .5ch;
+                            cursor: pointer;
+                        }
+    @media(min-width:600px){
+        .wrapper-usersearch{
+            width: 70%;
+        }
+    }
+    /*searchresults.php*/
+    .wrapper-results{
+        margin: 3rem 0;
+        max-width: 800px;
+        width: 100%;
+        justify-self: center;
+        background-color: rgba(184, 184, 184, 0.192);
+    }
